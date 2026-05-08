@@ -1,0 +1,58 @@
+@page "/products"
+@rendermode InteractiveServer
+@inject IProductService ProductService
+@inject ICategoryService CategoryService
+@inject ICartService CartService
+@inject ICurrentUserService CurrentUser
+@inject NavigationManager Nav
+
+<PageTitle>Коллекция — FashionMart</PageTitle>
+
+<div class="text-center mb-4">
+    <small class="text-uppercase text-muted" style="letter-spacing: 6px;">FashionMart Collection</small>
+    <h1 class="display-5 fw-light text-fm mt-2">Наша коллекция</h1>
+</div>
+
+<div class="d-flex justify-content-center gap-2 mb-5 flex-wrap">
+    <button class="btn fm-pill @(LineId == 0 ? "active" : "")" @onclick="@(() => SwitchLine(0))">Все</button>
+    @if (lines != null) { foreach (var c in lines) { <button class="btn fm-pill @(LineId == c.Id ? "active" : "")" @onclick="@(() => SwitchLine(c.Id))">@c.Name</button> } }
+</div>
+
+@if (outfits == null) { <p class="text-center"><em>Загрузка...</em></p> }
+else if (!outfits.Any()) { <div class="alert alert-info">Ничего не найдено.</div> }
+else
+{
+    <div class="row g-4">
+        @foreach (var p in outfits)
+        {
+            <div class="col-md-6">
+                <div class="fm-mag-card position-relative">
+                    @if (!string.IsNullOrEmpty(p.ImageUrl))
+                    { <img src="@p.ImageUrl" class="w-100" style="height: 380px; object-fit: cover;" /> }
+                    <div class="fm-mag-overlay p-4">
+                        <small class="text-uppercase text-light" style="letter-spacing: 3px;">@p.Category?.Name</small>
+                        <h3 class="text-light my-2">@p.Name</h3>
+                        <div class="d-flex justify-content-between align-items-end mt-3">
+                            <strong class="text-light fs-3">@p.Price.ToString("N0") ₽</strong>
+                            <div>
+                                <a class="btn btn-light btn-sm me-1" href="@($"/products/{p.Id}")">Детали</a>
+                                <button class="btn btn-light btn-sm" @onclick="() => SendToBag(p.Id)" disabled="@(p.Stock == 0)"><i class="bi bi-bag-heart"></i> В корзину</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}
+
+@code {
+    private IEnumerable<Models.Product>? outfits;
+    private IEnumerable<Models.Category>? lines;
+    private int LineId { get; set; } = 0;
+
+    protected override async Task OnInitializedAsync() { lines = await CategoryService.GetAllAsync(); await LoadOutfits(); }
+    private async Task SwitchLine(int catId) { LineId = catId; await LoadOutfits(); }
+    private async Task LoadOutfits() { outfits = LineId == 0 ? await ProductService.GetAllAsync() : await ProductService.GetByCategoryAsync(LineId); }
+    private async Task SendToBag(int id) { var c = await CurrentUser.GetOrCreateGuestShopperAsync(); await CartService.AddToCartAsync(c.Id, id); Nav.NavigateTo("/cart"); }
+}

@@ -1,0 +1,25 @@
+html, body { font-family: "Playfair Display", "Georgia", serif !important; background-color: #ad1457 !important; color: #4a0e2e !important; margin: 0; }
+.page { background-color: #f8bbd0 !important; min-height: 100vh; }
+main { background-color: #f8bbd0 !important; }
+.fm-nav, .navbar { background: linear-gradient(90deg, #4a0e2e, #ad1457) !important; }
+.fm-nav .nav-link, .navbar .nav-link, .navbar-brand { color: #fff !important; letter-spacing: 2px; font-weight: 600; }
+.fm-nav .nav-link:hover, .fm-nav .nav-link.active { color: #ffeb3b !important; }
+.fm-hero { background: linear-gradient(135deg, #880e4f 0%, #c2185b 50%, #e91e63 100%) !important; border: 4px solid #4a0e2e !important; box-shadow: 0 1rem 2rem rgba(74,14,46,0.5) !important; color: #fff !important; }
+.fm-hero h1, .fm-hero p, .fm-hero small { color: #fff !important; }
+.fm-footer, footer { background-color: #4a0e2e !important; border-top: 4px solid #f8bbd0 !important; color: #f8bbd0 !important; }
+.text-fm { color: #ad1457 !important; font-weight: 700; }
+.btn-primary, .btn-success { background-color: #c2185b !important; border-color: #c2185b !important; color: #fff !important; font-weight: 600; }
+.btn-primary:hover, .btn-success:hover { background-color: #880e4f !important; border-color: #880e4f !important; }
+.btn-light { background-color: #fff !important; color: #c2185b !important; font-weight: 700; border: 2px solid #c2185b !important; }
+.btn-light:hover { background-color: #c2185b !important; color: #fff !important; }
+.text-primary { color: #c2185b !important; }
+.bg-primary { background-color: #c2185b !important; }
+.fm-pill { border: 3px solid #c2185b !important; color: #c2185b !important; background: #fff !important; padding: 0.4rem 1.5rem; border-radius: 2rem; font-weight: 700; }
+.fm-pill:hover { background-color: #fce4ec !important; }
+.fm-pill.active { background-color: #c2185b !important; color: #fff !important; }
+.fm-mag-card { overflow: hidden; border-radius: 0.5rem; transition: all 0.3s ease; border: 4px solid #c2185b !important; box-shadow: 0 0.6rem 1.2rem rgba(194,24,91,0.5) !important; }
+.fm-mag-card:hover { transform: translateY(-5px); box-shadow: 0 1rem 2rem rgba(194,24,91,0.7) !important; }
+.fm-mag-overlay { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(74,14,46,0.95)); }
+.fm-card-feature, .card { background-color: #fff !important; border: 3px solid #c2185b !important; box-shadow: 0 0.5rem 1rem rgba(194,24,91,0.3) !important; }
+#blazor-error-ui { background: #ffc107; bottom: 0; display: none; left: 0; padding: 0.6rem 1.25rem; position: fixed; width: 100%; z-index: 1000; }
+#blazor-error-ui .dismiss { cursor: pointer; position: absolute; right: 0.75rem; top: 0.5rem; }
