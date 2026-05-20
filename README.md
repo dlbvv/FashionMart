@@ -148,7 +148,7 @@ cd FashionMart
 ### Шаг 2: Запуск контейнеров
 docker-compose up -d
 ### Шаг 3: Открыть приложение
-http://localhost:8005
+http://localhost:8010
 
 
 Скопируйте текст ниже для вставки в документацию или README:
