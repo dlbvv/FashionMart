@@ -49,7 +49,6 @@
 | Git | Система контроля версий |
 
 ---
-
 FashionMart/
 ├── FashionMart/                          # 📦 Основной веб-проект
 │   ├── Components/                       # 🧩 Blazor компоненты
@@ -122,7 +121,6 @@ FashionMart/
 ├── docker-compose.yml                    # 🐳 Оркестрация контейнеров
 ├── README.md                             # 📖 Документация
 └── .gitignore                            # 🚫 Исключения для Git
-
 ---
 
 ## Быстрый старт
