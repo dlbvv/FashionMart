@@ -144,8 +144,7 @@ https://hub.docker.com/r/dlbvv/fashionmart
 https://github.com/dlbvv/FashionMart
 
 git clone https://github.com/your-username/PasswordManager.git
-cd PasswordManager
-
+cd FashionMart
 ### Шаг 2: Запуск контейнеров
 docker-compose up -d
 ### Шаг 3: Открыть приложение
