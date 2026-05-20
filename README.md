@@ -50,7 +50,6 @@
 
 ---
 
-## 📁 Структура проекта
 FashionMart/
 ├── FashionMart/                          # 📦 Основной веб-проект
 │   ├── Components/                       # 🧩 Blazor компоненты
