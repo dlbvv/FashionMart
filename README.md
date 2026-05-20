@@ -102,7 +102,7 @@ FashionMart/
 │   │   ├── IOrderService.cs
 │   │   ├── OrderService.cs               # Создание заказов, списание товаров
 │   │   ├── ICurrentUserService.cs
-│   │   └── CurrentUserService.cs         # 👤 Демо-пользователь (guest@fashionmart.local)
+│   │   └── CurrentUserService.cs         # 👤 Демо-пользователь (guest)
 │   │
 │   ├── Validators/                       # ✅ FluentValidation валидаторы
 │   │   ├── CustomerValidator.cs          # Валидация покупателя
